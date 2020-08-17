@@ -21,10 +21,11 @@ for file in all_files:
 
         idx = 0
         vals_str = []
-        while 'cm**-1' in mylines[line_start+idx][-6:]:
-            vals_str.append(mylines[line_start+idx][6:-6])
+        while 'cm**-1' in mylines[line_start+idx]:
+            vals_str.append(mylines[line_start+idx][6:19])
             idx+=1
         vals = np.asarray([float(i) for i in vals_str])
+        print (vals)
         data[file]['neg_num_vibration'] = sum(vals<0)
 
         ### Now search for gibbs enthalpy
