@@ -1,2 +1,7 @@
-# orcid_filtering
-Filter out gibbs enthalpy from orcid output
+# ORCID Result Filtering
+
+## Instructions
+Download and install Python 3.6 or newer.  
+Using pip, install ```pandas, numpy```.  
+Run   
+
