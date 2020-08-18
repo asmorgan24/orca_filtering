@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 
 all_files = os.listdir("outputs/")
-data = pd.DataFrame(columns=all_files, index =['neg_num_vibration', 'gibbs_enthalpy'])
+data = pd.DataFrame(columns=all_files, index =['neg_num_vibration', 'lt_neg_20_vibration', 'gibbs_enthalpy'])
 num_neg_vibs = []
 gibbs_freq = []
 for file in all_files:
@@ -25,8 +25,8 @@ for file in all_files:
             vals_str.append(mylines[line_start+idx][6:19])
             idx+=1
         vals = np.asarray([float(i) for i in vals_str])
-        print (vals)
         data[file]['neg_num_vibration'] = sum(vals<0)
+        data[file]['lt_neg_20_vibration'] = sum(vals<-20)
 
         ### Now search for gibbs enthalpy
         for line_num in range(len(mylines)):
