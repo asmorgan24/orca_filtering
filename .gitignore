@@ -8,6 +8,7 @@ outputs/*
 input_files/*
 output.csv
 *.ipynb
+gen_input_files
 
 # C extensions
 *.so
