@@ -30,21 +30,40 @@ for retry in range(100): #windows sucks and sometimes this is necessary
 ############
 #User input and filter substituents
 ############
+print ('For the following input, select as many substituents as you want with a space in between... ')
 in91 = input ('Location 3: "H", "F", "CH3", "CF3", "OCH3", "CO2CH3", "COCH3", "CONMe2", "Beg":   ')
 in92 = input ('Location 4: "H", "F", "CH3", "CF3", "OCH3", "CO2CH3", "COCH3", "CONMe2", "Beg":   ')
 in94 = input ('Location 5: "H", "F", "CH3", "CF3", "OCH3", "CO2CH3", "COCH3", "CONMe2", "Beg":   ')
 
-#Filter out all the options, according to what Dr. Pabst wants
-idx91 = H91_names.index(in91)
-idx92 = H91_names.index(in92)
-idx94 = H91_names.index(in94)
+in91 = in91.split() #these are now lists of what you selected
+in92 = in92.split()
+in94 = in94.split()
 
-H91 = [list(H91[idx91])]
-H91_names = [H91_names[idx91]]
-H92 = [list(H92[idx92])]
-H92_names = [H92_names[idx92]]
-H94 = [list(H94[idx94])]
-H94_names = [H94_names[idx94]]
+#Filter out all the options, according to what Dr. Pabst wants
+H91_temp = []
+H91_names_temp = []
+for i in range(len(in91)):
+    idx91 = H91_names.index(in91[i])
+    H91_temp.append(list(H91[idx91]))
+    H91_names_temp.append(H91_names[idx91])
+H91, H91_names = H91_temp, H91_names_temp
+
+H92_temp = []
+H92_names_temp = []
+for i in range(len(in92)):
+    idx92 = H92_names.index(in92[i])
+    H92_temp.append(list(H92[idx92]))
+    H92_names_temp.append(H92_names[idx92])
+H92, H92_names = H92_temp, H92_names_temp
+
+H94_temp = []
+H94_names_temp = []
+for i in range(len(in94)):
+    idx94 = H94_names.index(in94[i])
+    H94_temp.append(list(H94[idx94]))
+    H94_names_temp.append(H94_names[idx94])
+H94, H94_names = H94_temp, H94_names_temp
+
 
 ##########
 #Generate files for each main group
@@ -74,4 +93,4 @@ for eleme in ["Co", "Free", "Rad"]:
                     for item in cpy94:
                         f.write("%s\n" % item)
 
-dnt_fuk_w_me = input('All files created in gen_input_files folder... Press Enter to quit...')
+dnt_fuk_w_me = input('All files created in gen_input_files folder... Press Enter to quit...') #this variable does nothing
