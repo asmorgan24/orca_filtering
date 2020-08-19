@@ -1,0 +1,21 @@
+Workflow:
+
+I'd like to input some command which calls out the substituents, eg
+
+BDFE(OCH3,F,CH3)
+
+to generate three input files ("Co", "rad", and "free") with the stated substituents at the 3, 4, 5 positions.
+
+Filtering results:
+
+The numbers that I need are BDFE(CH) and BDFE(MC)
+
+BDFE(CH) = 627.509474*{(Gibbs free enthalpy from "free" output) - [(Gibbs free enthalpy from "rad" output) - 0.513321]}
+
+BDFE(MC) = 627.509474*{(Gibbs free enthalpy from "Co" output) - [(Gibbs free enthalpy from "rad" output) - 3314.8690]}
+
+Also: the number of imaginary frequencies more negative than -20 from each output "Co" "rad" and "free"
+
+inputfile.inp
+
+inputfile.out

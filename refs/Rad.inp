@@ -1,0 +1,38 @@
+#
+! UKS wB97X-D3 RIJCOSX def2-SVP def2/J Normalprint SlowConv TightSCF TightOpt Numfreq Grid4 Nofinalgrid
+
+%pal nprocs 12
+end
+
+%basis NewGTO 27 "def2-TZVP(-f)" end
+	   NewGTO 15 "def2-TZVP(-f)" end
+	   NewGTO 7 "def2-TZVP(-f)" end
+	   NewGTO 5 "def2-TZVP(-f)" end
+       NewAuxGTO 27 "def2/J" end
+	   NewAuxGTO 15 "def2/J" end
+	   NewAuxGTO 7 "def2/J" end
+	   NewAuxGTO 5 "def2/J" end
+      end
+
+%SCF MaxIter 50000
+     TolE 1e-7
+     TolErr 1e-6
+    end
+
+%geom MaxIter 150
+	end
+
+%FREQ RESTART TRUE
+CENTRALDIFF TRUE
+INCREMENT 0.01
+END
+
+* xyz 0 2
+C84         0.0000000000      0.0000000000      2.0650500000 NewGTO "def2-TZVP(-f)" end NewAuxGTO "def2/J" end
+C85        -1.1919100000     -0.0147300000      2.7853100000
+C86         1.1790700000     -0.0007800000      2.8393400000
+C87        -1.2701100000     -0.2494500000      4.1303700000
+C88         1.1146000000     -0.0987200000      4.2497200000
+C89        -0.1186600000     -0.3013300000      4.8792800000
+H90         2.1383400000      0.0685800000      2.3571500000
+H93        -2.1204700000      0.1157200000      2.3689000000
