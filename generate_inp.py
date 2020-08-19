@@ -31,9 +31,17 @@ for retry in range(100): #windows sucks and sometimes this is necessary
 #User input and filter substituents
 ############
 print ('For the following input, select as many substituents as you want with a space in between... ')
-in91 = input ('Location 3: "H", "F", "CH3", "CF3", "OCH3", "CO2CH3", "COCH3", "CONMe2", "Beg":   ')
-in92 = input ('Location 4: "H", "F", "CH3", "CF3", "OCH3", "CO2CH3", "COCH3", "CONMe2", "Beg":   ')
-in94 = input ('Location 5: "H", "F", "CH3", "CF3", "OCH3", "CO2CH3", "COCH3", "CONMe2", "Beg":   ')
+print ('Options: "H", "F", "CH3", "CF3", "OCH3", "CO2CH3", "COCH3", "CONMe2", "Beg"')
+print ('Example: ')
+print ('Location 3 (H91): H CH3 CONMe2')
+print ('Location 4 (H92): F CH3 Beg')
+print ('Location 5 (H94): OCH3 Co2CH3')
+print ('')
+print ('... this input will create 3(3*3*2) = 36 .inp files')
+print (' ')
+in91 = input ('Location 3 (H91):    ')
+in92 = input ('Location 4 (H92):    ')
+in94 = input ('Location 5 (H94):    ')
 
 in91 = in91.split() #these are now lists of what you selected
 in92 = in92.split()
