@@ -3,7 +3,7 @@
 from dict import H91, H92, H94, H91_names, H92_names, H94_names #load all possible substituents
 import numpy as np
 from copy import deepcopy
-import os, shutil, IPython
+import os, shutil
 
 ############
 #function(s)

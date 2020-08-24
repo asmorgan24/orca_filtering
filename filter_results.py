@@ -70,9 +70,9 @@ data = pd.DataFrame(columns=Substituent_order, index =index_rows)
 for i in range(len(Co_indices)):
     Co_n, Co_n20, Co_gi = read_file(all_files[Co_indices[i]])
     Fr_n, Fr_n20, Fr_gi = read_file(all_files[Free_indices[i]])
-    Ra_n, Ra_n20, Ra_gi = read_file(all_files[Co_indices[i]])
-    BDFE_CH = 627.509474*(Fr_gi - (Ra_gi - 0.513321))
-    BDFE_MC = 627.509474*(Co_gi - (Ra_gi - 3314.8690))
+    Ra_n, Ra_n20, Ra_gi = read_file(all_files[Rad_indices[i]])
+    BDFE_CH = abs(627.509474*(Fr_gi - (Ra_gi - 0.513321)))
+    BDFE_MC = abs(627.509474*(Co_gi - (Ra_gi - 3314.8690)))
 
     vals = [Co_n, Co_n20, Co_gi, Fr_n, Fr_n20, Fr_gi, Ra_n, Ra_n20, Ra_gi, BDFE_CH, BDFE_MC]
     for j in range(len(vals)):
